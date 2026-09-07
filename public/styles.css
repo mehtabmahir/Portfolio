@@ -103,3 +103,86 @@ html{zoom:1.25}
 @media(prefers-reduced-motion:reduce){
   body :is(.button,.social-icon,.home-button,.theme-toggle,.header nav>a,.text-link):not(:disabled):hover,.hero-copy>.portrait-block:hover{transform:none}
 }
+
+/* Neutral glass surfaces and restrained background light. */
+:root{
+  --glass:rgba(24,27,32,.38);
+  --glass-border:rgba(204,216,229,.18);
+  --glass-shadow:0 12px 36px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.05);
+  --glow-slate:rgba(102,132,175,.23);
+  --glow-teal:rgba(75,142,136,.17);
+  --glow-warm:rgba(162,146,126,.10);
+}
+:root[data-theme="light"]{
+  --glass:rgba(255,255,255,.38);
+  --glass-border:rgba(255,255,255,.68);
+  --glass-shadow:0 12px 36px rgba(44,60,76,.07),inset 0 1px 0 rgba(255,255,255,.75);
+  --glow-slate:rgba(117,154,195,.30);
+  --glow-teal:rgba(122,181,167,.24);
+  --glow-warm:rgba(206,175,133,.20);
+}
+body{background-color:var(--bg);isolation:isolate}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  #projects :is(.featured,.project-card,.small-project),.case-image,.admin form,.nav-contact,.home-button,.theme-toggle{
+    background:var(--glass);
+    border-color:var(--glass-border);
+    -webkit-backdrop-filter:blur(22px) saturate(125%);
+    backdrop-filter:blur(22px) saturate(125%);
+    box-shadow:var(--glass-shadow);
+  }
+  .featured-visual,.workout-details{background:linear-gradient(135deg,transparent,var(--glow-slate))}
+  .project-image{background:linear-gradient(135deg,var(--glow-slate),transparent)}
+  .care-visual{background:linear-gradient(135deg,var(--glow-teal),transparent)}
+}
+/* User-selected landscape backgrounds for each theme. */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:url('/assets/landscape-dark.png') center / cover no-repeat;
+}
+
+[data-theme="light"] body::before{background-image:url('/assets/landscape-light.png')}
+
+/* Frosted panels keep long-form sections readable over the backdrop. */
+#work,#about,#contact{
+  border:1px solid var(--glass-border);
+  border-radius:16px;
+  background:var(--panel);
+  padding:36px;
+  box-shadow:var(--glass-shadow);
+  scroll-margin-top:0;
+}
+#work{margin-top:65px}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  #work,#about,#contact{
+    background:var(--glass);
+    -webkit-backdrop-filter:blur(24px) saturate(125%);
+    backdrop-filter:blur(24px) saturate(125%);
+  }
+}
+@media(max-width:700px){
+  #work,#about,#contact{padding:24px 20px;border-radius:12px}
+  #work{margin-top:40px}
+}
+
+/* Clear heading hierarchy over translucent panels in either theme. */
+h1,h2{font-weight:600}
+#projects h3,.case-study h1{font-weight:700}
+.experience-row h3,.degree-details h3,.capabilities h3,.decisions h3,.workout-details h4{font-weight:600}
+.experience-row h3 span{font-weight:500}
+.feature-summary{font-weight:500}
+.button,.text-link{font-weight:600}
+:root[data-theme="light"]{--text:#171923;--muted:#434550}
+[data-theme="light"] .feature-summary{color:var(--text)}
+
+/* Keep secondary copy readable against the dark landscape. */
+:root:not([data-theme="light"]){
+  --muted:#fff;
+  --tone-aaaab3:#fff;
+  --tone-b0aeb4:#fff;
+  --tone-b5bcc2:#fff;
+  --tone-b9bdc5:#fff;
+  --tone-bcb9c4:#fff;
+  --tone-c2c6cd:#fff;
+  --tone-d3d1d7:#fff;
+  --tone-e5e1ed:#fff;
+}

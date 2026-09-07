@@ -12,10 +12,12 @@
 - The label above the name is Malverne, NY, without a status dot.
 - Degree details belong directly under Experience, before the six jobs, without a separate Education heading or card.
 - Degree label: Queens College, NY. Dates: Jan 2023 - Dec 2025.
-- Keep the six existing work roles; exclude Uber. Omit the Handshake project name and Contract/Remote from LinkedIn.
+- Keep the existing work roles; exclude Uber. Combine Handshake and LinkedIn AI Training Program in one AI Trainer entry with comma-separated names and their shared Aug 2026 – Present dates. Retain both roles’ bullets. Omit the Handshake project name and Contract/Remote from LinkedIn.
 - Use the latest resume details, retaining relevant earlier specifics without duplicate bullets. Preserve the uploaded PDF itself.
 
 ## Resume Hosting
+
+The website experience section excludes the Mercor Cybersecurity Expert entry at the user’s request. Preserve the uploaded resume PDF as supplied.
 
 - Deploy through Git integration or a CLI deploy that includes Functions; uploading dist alone is insufficient.
 - RESUME_PASSWORD_HASH must include Functions scope. Redeploy after changing it.

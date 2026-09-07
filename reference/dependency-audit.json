@@ -1,0 +1,597 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@netlify/build": {
+      "name": "@netlify/build",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@netlify/functions-utils",
+        "@netlify/zip-it-and-ship-it"
+      ],
+      "effects": [
+        "netlify-cli"
+      ],
+      "range": "0.0.24 - 0.0.26 || 1.0.0-dl-test || 16.0.0-rc || >=17.0.1",
+      "nodes": [
+        "node_modules/netlify-cli/node_modules/@netlify/build"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "@netlify/dev": {
+      "name": "@netlify/dev",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@netlify/functions-dev",
+        "@netlify/images"
+      ],
+      "effects": [
+        "netlify-cli"
+      ],
+      "range": ">=4.2.0",
+      "nodes": [
+        "node_modules/@netlify/dev"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "@netlify/functions-dev": {
+      "name": "@netlify/functions-dev",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@netlify/zip-it-and-ship-it"
+      ],
+      "effects": [
+        "@netlify/dev"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@netlify/functions-dev"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "@netlify/functions-utils": {
+      "name": "@netlify/functions-utils",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@netlify/zip-it-and-ship-it"
+      ],
+      "effects": [
+        "@netlify/build"
+      ],
+      "range": ">=2.0.1",
+      "nodes": [
+        "node_modules/@netlify/functions-utils"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "@netlify/images": {
+      "name": "@netlify/images",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "ipx"
+      ],
+      "effects": [
+        "@netlify/dev",
+        "netlify-cli"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@netlify/images"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "@netlify/zip-it-and-ship-it": {
+      "name": "@netlify/zip-it-and-ship-it",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "toml"
+      ],
+      "effects": [
+        "@netlify/build",
+        "@netlify/functions-dev",
+        "@netlify/functions-utils",
+        "netlify-cli"
+      ],
+      "range": ">=4.15.0",
+      "nodes": [
+        "node_modules/@netlify/zip-it-and-ship-it"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "body-parser": {
+      "name": "body-parser",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1123976,
+          "name": "body-parser",
+          "dependency": "body-parser",
+          "title": "body-parser vulnerable to denial of service when invalid limit value silently disables size enforcement",
+          "url": "https://github.com/advisories/GHSA-v422-hmwv-36x6",
+          "severity": "low",
+          "cwe": [
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": ">=2.0.0 <2.3.0"
+        }
+      ],
+      "effects": [],
+      "range": "2.0.0 - 2.2.2",
+      "nodes": [
+        "node_modules/netlify-cli/node_modules/express/node_modules/body-parser"
+      ],
+      "fixAvailable": true
+    },
+    "follow-redirects": {
+      "name": "follow-redirects",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1116560,
+          "name": "follow-redirects",
+          "dependency": "follow-redirects",
+          "title": "follow-redirects leaks Custom Authentication Headers to Cross-Domain Redirect Targets",
+          "url": "https://github.com/advisories/GHSA-r4q5-vmmm-2653",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-200"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<=1.15.11"
+        }
+      ],
+      "effects": [],
+      "range": "<=1.15.11",
+      "nodes": [
+        "node_modules/netlify-cli/node_modules/follow-redirects"
+      ],
+      "fixAvailable": true
+    },
+    "http-proxy-middleware": {
+      "name": "http-proxy-middleware",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1121163,
+          "name": "http-proxy-middleware",
+          "dependency": "http-proxy-middleware",
+          "title": "http-proxy-middleware: multipart/form-data field injection via unescaped CRLF in `fixRequestBody`",
+          "url": "https://github.com/advisories/GHSA-gcq2-9pq2-cxqm",
+          "severity": "high",
+          "cwe": [
+            "CWE-93"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:H/A:N"
+          },
+          "range": ">=3.0.4 <3.0.7"
+        },
+        {
+          "source": 1121361,
+          "name": "http-proxy-middleware",
+          "dependency": "http-proxy-middleware",
+          "title": "http-proxy-middleware `router` host+path substring matching allows Host-header-driven backend routing bypass",
+          "url": "https://github.com/advisories/GHSA-64mm-vxmg-q3vj",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-20",
+            "CWE-187"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=3.0.0 <3.0.6"
+        }
+      ],
+      "effects": [],
+      "range": "3.0.0 - 3.0.6",
+      "nodes": [
+        "node_modules/netlify-cli/node_modules/http-proxy-middleware"
+      ],
+      "fixAvailable": true
+    },
+    "ipx": {
+      "name": "ipx",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "sharp"
+      ],
+      "effects": [
+        "@netlify/images"
+      ],
+      "range": "<=4.0.0-alpha.1",
+      "nodes": [
+        "node_modules/ipx"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "lodash": {
+      "name": "lodash",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1115806,
+          "name": "lodash",
+          "dependency": "lodash",
+          "title": "lodash vulnerable to Code Injection via `_.template` imports key names",
+          "url": "https://github.com/advisories/GHSA-r5fr-rjxr-66jc",
+          "severity": "high",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 8.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": ">=4.0.0 <=4.17.23"
+        },
+        {
+          "source": 1115810,
+          "name": "lodash",
+          "dependency": "lodash",
+          "title": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+          "url": "https://github.com/advisories/GHSA-f23m-r3pf-42rh",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 6.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L"
+          },
+          "range": "<=4.17.23"
+        }
+      ],
+      "effects": [],
+      "range": "<=4.17.23",
+      "nodes": [
+        "node_modules/netlify-cli/node_modules/lodash"
+      ],
+      "fixAvailable": true
+    },
+    "multiparty": {
+      "name": "multiparty",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1119105,
+          "name": "multiparty",
+          "dependency": "multiparty",
+          "title": "multiparty vulnerable to ReDoS via filename parsing",
+          "url": "https://github.com/advisories/GHSA-65x3-rw7q-gx94",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=4.2.3"
+        },
+        {
+          "source": 1119107,
+          "name": "multiparty",
+          "dependency": "multiparty",
+          "title": "multiparty: Denial of Service via Prototype Pollution leads to Uncaught Exception",
+          "url": "https://github.com/advisories/GHSA-qxch-whhj-8956",
+          "severity": "high",
+          "cwe": [
+            "CWE-248",
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=4.2.3"
+        },
+        {
+          "source": 1119505,
+          "name": "multiparty",
+          "dependency": "multiparty",
+          "title": "multiparty vulnerable to Denial of Service via Uncaught Exception in filename* parameter parsing",
+          "url": "https://github.com/advisories/GHSA-xh3c-6gcq-g4rv",
+          "severity": "high",
+          "cwe": [
+            "CWE-755"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=4.2.3"
+        }
+      ],
+      "effects": [],
+      "range": "<=4.2.3",
+      "nodes": [
+        "node_modules/netlify-cli/node_modules/multiparty"
+      ],
+      "fixAvailable": true
+    },
+    "netlify-cli": {
+      "name": "netlify-cli",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "@netlify/build",
+        "@netlify/dev",
+        "@netlify/images",
+        "@netlify/zip-it-and-ship-it",
+        "toml"
+      ],
+      "effects": [],
+      "range": "2.19.1 - 2.19.2 || >=5.2.7",
+      "nodes": [
+        "node_modules/netlify-cli"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "path-to-regexp": {
+      "name": "path-to-regexp",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1115573,
+          "name": "path-to-regexp",
+          "dependency": "path-to-regexp",
+          "title": "path-to-regexp vulnerable to Denial of Service via sequential optional groups",
+          "url": "https://github.com/advisories/GHSA-j3q9-mxjg-w52f",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=8.0.0 <8.4.0"
+        },
+        {
+          "source": 1115582,
+          "name": "path-to-regexp",
+          "dependency": "path-to-regexp",
+          "title": "path-to-regexp vulnerable to Regular Expression Denial of Service via multiple wildcards",
+          "url": "https://github.com/advisories/GHSA-27v5-c462-wpq7",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 5.9,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=8.0.0 <8.4.0"
+        }
+      ],
+      "effects": [],
+      "range": "8.0.0 - 8.3.0",
+      "nodes": [
+        "node_modules/netlify-cli/node_modules/router/node_modules/path-to-regexp"
+      ],
+      "fixAvailable": true
+    },
+    "qs": {
+      "name": "qs",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1113161,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "qs's arrayLimit bypass in comma parsing allows denial of service",
+          "url": "https://github.com/advisories/GHSA-w7fw-mjwx-w883",
+          "severity": "low",
+          "cwe": [
+            "CWE-20"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": ">=6.7.0 <=6.14.1"
+        },
+        {
+          "source": 1119502,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "qs has a remotely triggerable DoS: qs.stringify crashes with TypeError on null/undefined entries in comma-format arrays when encodeValuesOnly is set",
+          "url": "https://github.com/advisories/GHSA-q8mj-m7cp-5q26",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-476"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": ">=6.11.1 <=6.15.1"
+        },
+        {
+          "source": 1158507,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "qs: Denial of Service via Attacker Controlled isBuffer",
+          "url": "https://github.com/advisories/GHSA-4mjr-xmp4-gh2g",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-248",
+            "CWE-703"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": ">=2.2.5 <6.16.0"
+        }
+      ],
+      "effects": [],
+      "range": "2.2.5 - 6.15.3",
+      "nodes": [
+        "node_modules/netlify-cli/node_modules/express/node_modules/qs"
+      ],
+      "fixAvailable": true
+    },
+    "sharp": {
+      "name": "sharp",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1124066,
+          "name": "sharp",
+          "dependency": "sharp",
+          "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
+          "url": "https://github.com/advisories/GHSA-f88m-g3jw-g9cj",
+          "severity": "high",
+          "cwe": [
+            "CWE-1395"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.35.0"
+        }
+      ],
+      "effects": [
+        "ipx"
+      ],
+      "range": "<0.35.0",
+      "nodes": [
+        "node_modules/sharp"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    },
+    "toml": {
+      "name": "toml",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1164824,
+          "name": "toml",
+          "dependency": "toml",
+          "title": "toml-node: Uncontrolled Recursion",
+          "url": "https://github.com/advisories/GHSA-82x6-q7mm-w9cf",
+          "severity": "high",
+          "cwe": [
+            "CWE-674"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<4.2.0"
+        },
+        {
+          "source": 1164825,
+          "name": "toml",
+          "dependency": "toml",
+          "title": "toml-node: Prototype Pollution Leads to `Object.prototype` Corruption via `__proto__` Key-Path Desynchronization",
+          "url": "https://github.com/advisories/GHSA-v5mp-jgw5-2x6j",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 8.2,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L"
+          },
+          "range": "<4.1.2"
+        }
+      ],
+      "effects": [
+        "@netlify/zip-it-and-ship-it",
+        "netlify-cli"
+      ],
+      "range": "<=4.1.2",
+      "nodes": [
+        "node_modules/toml"
+      ],
+      "fixAvailable": {
+        "name": "netlify-cli",
+        "version": "5.3.1",
+        "isSemVerMajor": true
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 1,
+      "moderate": 2,
+      "high": 14,
+      "critical": 0,
+      "total": 17
+    },
+    "dependencies": {
+      "prod": 56,
+      "dev": 1086,
+      "optional": 66,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 1141
+    }
+  }
+}

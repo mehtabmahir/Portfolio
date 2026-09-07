@@ -186,3 +186,28 @@ h1,h2{font-weight:600}
   --tone-d3d1d7:#fff;
   --tone-e5e1ed:#fff;
 }
+
+/* Give the footer divider breathing room below the Connect panel. */
+body:has(#contact) .footer{margin-top:40px}
+
+/* Reading surfaces for every standalone page. */
+:root{--reading-glass:rgba(16,20,29,.82)}
+:root[data-theme="light"]{--reading-glass:rgba(255,255,255,.48)}
+.case-study,.resume-page,.admin{
+  margin-top:36px;margin-bottom:40px;padding:40px;
+  background:var(--panel);border:1px solid var(--glass-border);
+  border-radius:16px;box-shadow:var(--glass-shadow);
+}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .case-study,.resume-page,.admin{background:var(--reading-glass);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
+}
+.case-study .back-link{margin-bottom:28px}
+.case-study .case-image,.admin form{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--glass)}
+.case-study .case-section{gap:36px}
+.case-study .decisions{gap:22px}
+@media(max-width:700px){
+  .case-study,.resume-page,.admin{margin-top:24px;margin-bottom:28px;padding:24px 20px;border-radius:12px}
+  .case-study .case-section{gap:18px}
+  .case-study h1{overflow-wrap:anywhere}
+  .case-meta .button{max-width:100%;text-align:center}
+}

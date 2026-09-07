@@ -12,9 +12,9 @@
 .hero-social-actions{display:flex;gap:16px;margin-top:34px}.hero-social-actions .social-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:5px;color:var(--text)}.social-icon svg{width:22px;height:22px}.hero-social-actions .social-icon:hover{color:var(--accent)}.hero-social-actions+.hero-actions{margin-top:12px}
 @media(max-width:700px){.hero-social-actions{max-width:340px}}
 .hero-actions{gap:10px}.hero-actions .button{flex:none;min-width:0;min-height:0;padding:8px 18px;border-radius:999px;font-size:13px;line-height:1.5}
-.hero-links{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:28px}.hero-links .hero-social-actions,.hero-links .hero-actions{margin:0;gap:10px}.hero-links .social-icon{width:28px;height:28px}.hero-links .hero-actions .button{height:24px;padding:0 10px;font-size:11px;line-height:1;border-color:var(--accent);background:var(--accent);color:var(--tone-17191c)}.hero-links .hero-actions .button:hover{background:var(--tone-eceef1);border-color:var(--tone-eceef1);transform:none}
+.hero-links{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:28px}.hero-links .hero-social-actions,.hero-links .hero-actions{margin:0;gap:10px}.hero-links .social-icon{width:28px;height:28px}.hero-links .hero-actions .button{height:24px;padding:0 10px;font-size:11px;line-height:1;border-color:var(--accent);background:var(--accent);color:var(--tone-17191c)}.hero-links .hero-actions .button:hover{background:var(--tone-eceef1);border-color:var(--tone-eceef1)}
 .header-identity{display:flex;align-items:center;gap:12px}.home-button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--line);border-radius:7px;color:var(--accent);flex-shrink:0}.home-button svg{width:16px;height:16px}.home-button:hover{background:var(--panel)}
-.portrait-frame img{transition:transform .3s ease}.portrait-frame:hover img{transform:scale(1.08)}
+.portrait-block{transition:transform .3s ease}
 
 .portrait-frame{border:0;padding:0;background:transparent}
 .project-image{padding:30px 36px}
@@ -89,3 +89,17 @@ html{zoom:1.25}
   #projects .project-card:hover .project-image img{transform:scale(1.025)}
 }
 @media(prefers-reduced-motion:reduce){#projects :is(.featured,.project-card,.small-project):hover,#projects .featured:hover .featured-visual img,#projects .project-card:hover .project-image img{transform:none}}
+
+/* Shared feedback for controls and the entire circular portrait. */
+.header nav>a,.text-link{display:inline-flex}
+.button,.social-icon,.home-button,.theme-toggle,.header nav>a,.text-link{transition:transform .25s ease,box-shadow .25s ease,background .2s,color .2s,border-color .2s}
+@media(hover:hover) and (pointer:fine){
+  body :is(.button,.social-icon,.home-button,.theme-toggle,.header nav>a,.text-link):not(:disabled):hover{transform:translateY(-4px)}
+  body :is(.button,.home-button,.theme-toggle):not(:disabled):hover{box-shadow:0 8px 18px #0002}
+  .hero-copy>.portrait-block:hover{transform:scale(1.06)}
+  /* The stretched link must stay anchored to its card. */
+  #projects .card-link:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  body :is(.button,.social-icon,.home-button,.theme-toggle,.header nav>a,.text-link):not(:disabled):hover,.hero-copy>.portrait-block:hover{transform:none}
+}

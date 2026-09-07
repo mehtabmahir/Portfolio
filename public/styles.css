@@ -77,3 +77,15 @@ html{zoom:1.25}
 #resume-preview{background:#fff}
 [data-theme="light"] .error{color:#a52222}
 [data-theme="light"] .success{color:#246c39}
+
+/* A native link covers each project card, including its empty space. */
+#projects :is(.featured,.project-card,.small-project){position:relative;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+#projects .project-card{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--panel)}
+#projects .card-link::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;cursor:pointer}
+#projects :is(.featured,.project-card,.small-project):focus-within{outline:2px solid var(--accent);outline-offset:4px}
+@media(hover:hover) and (pointer:fine){
+  #projects :is(.featured,.project-card,.small-project):hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 14px 28px #0002}
+  #projects .featured:hover .featured-visual img{transform:translateY(-4px)}
+  #projects .project-card:hover .project-image img{transform:scale(1.025)}
+}
+@media(prefers-reduced-motion:reduce){#projects :is(.featured,.project-card,.small-project):hover,#projects .featured:hover .featured-visual img,#projects .project-card:hover .project-image img{transform:none}}

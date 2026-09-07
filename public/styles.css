@@ -40,3 +40,10 @@ html{zoom:1.25}
 .experience-bullets{margin:0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7}
 .experience-bullets li+li{margin-top:8px}
 .experience-bullets li::marker{color:var(--accent)}
+
+.degree-details{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:22px}
+.degree-details h3{font-size:18px;letter-spacing:-.02em;line-height:1.4}
+.degree-details p{font-size:14px;margin-top:6px}
+.degree-details .degree-date{font-size:12px;white-space:nowrap;margin:0}
+.experience .degree-details{padding-bottom:28px}
+@media(max-width:700px){.degree-details{align-items:flex-start;flex-direction:column;gap:12px}}

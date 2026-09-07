@@ -10,3 +10,19 @@ test('built pages have one h1, metadata, and valid internal links and assets',as
  }
  const home=await readFile('dist/index.html','utf8');assert.match(home,/Handshake/);assert.match(home,/Workout Counter/);assert.match(home,/mehtab\.mahir@gmail\.com/);assert.doesNotMatch(home,/chetanverma|qmail|Aspiring/);
 });
+
+
+test('every local link fragment resolves on its destination page', async () => {
+ const files = (await readdir('dist', {recursive:true})).filter(file => file.endsWith('.html'));
+ for (const file of files) {
+  const content = await readFile(`dist/${file}`, 'utf8');
+  for (const [, href] of content.matchAll(/href="([^"]*#[^"]+)"/g)) {
+   if (!href.startsWith('/') && !href.startsWith('#')) continue;
+   const [pathname, fragment] = href.split('#');
+   const target = pathname ? resolve('dist', '.' + pathname + (pathname.endsWith('/') ? 'index.html' : '')) : resolve('dist', file);
+   const destination = await readFile(target, 'utf8');
+   const ids = [...destination.matchAll(/id="([^"]+)"/g)].map(match => match[1]);
+   assert.ok(ids.includes(decodeURIComponent(fragment)), `${file}: missing target ${href}`);
+  }
+ }
+});

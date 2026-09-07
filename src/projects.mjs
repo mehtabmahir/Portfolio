@@ -14,8 +14,8 @@ export const projects = [
     "summary": "Run Whisper locally without setting up a command-line workflow.",
     "description": "A desktop transcription app that handles model downloads, media conversion, and GPU setup, with batch queues and live transcription.",
     "role": "Desktop application development",
-    "problem": "People who want to transcribe recordings locally can run Whisper, but getting started involves model files, media conversion, dependencies, and hardware-specific configuration. Repeating those steps for a folder of recordings adds more work. The goal was to make local transcription usable without requiring users to assemble that workflow themselves.",
-    "solution": "EasyWhisperUI puts model selection, downloads, FFmpeg preprocessing, and transcription in one desktop app. Users can queue recordings, export text or timestamped subtitles, or use live transcription. Audio processing runs locally through whisper.cpp, with GPU acceleration where supported.",
+    "problem": "People who want to transcribe recordings locally can run Whisper, but getting started involves model files, media conversion, dependencies, and hardware-specific configuration. Repeating those steps for a folder of recordings adds more work. I built EasyWhisperUI so users could transcribe locally without assembling that workflow themselves.",
+    "solution": "EasyWhisperUI brings model selection, downloads, FFmpeg preprocessing, and transcription into one desktop app. Users can queue recordings, export text or timestamped subtitles, or use live transcription. Audio processing runs locally through whisper.cpp, with GPU acceleration where supported.",
     "decisions": [
       [
         "Setup That Matches the Hardware",
@@ -63,7 +63,7 @@ export const projects = [
         "Users choose the high and low refresh rates to suit their display. The background loop checks once per second and avoids requesting a display change when the target rate is already active."
       ]
     ],
-    "outcome": "The project README reports up to 20% longer battery life from reducing the refresh rate. Treat this as a reported upper estimate rather than a guaranteed gain: results depend on the display, brightness, workload, and device. Full-screen games can also trigger the lower rate because the app detects window state, not media type.",
+    "outcome": "Reducing the refresh rate can extend battery life by up to 20%, depending on the display, brightness, workload, and device. The app uses full-screen detection to trigger the switch, so full-screen games can also activate the lower rate.",
     "outcomeTitle": "Battery Benefit and Tradeoffs"
   },
   {
@@ -80,8 +80,8 @@ export const projects = [
     "summary": "Carry an AI-assisted intake conversation into a doctor chat.",
     "description": "A four-person YHack prototype that collects symptoms through chat, summarizes the conversation, and lets a doctor review the context before responding.",
     "role": "Member of a four-person hackathon team",
-    "problem": "A patient describing symptoms in an initial chat may need to repeat that information when a clinician joins. The hackathon project explored how to carry the conversation into a doctor-facing workflow, so the handoff includes the context already collected.",
-    "solution": "Built with three teammates in 24 hours at YHack 2024, the prototype combines an OpenAI-assisted intake chat with a request to speak to a doctor. That request generates a short conversation summary and issue title. A doctor dashboard exposes the context and supports real-time patient–doctor messaging through Firebase.",
+    "problem": "A patient describing symptoms in an initial chat may need to repeat that information when a clinician joins. My teammates and I wanted to carry that context into the doctor chat so patients would not have to start over.",
+    "solution": "I worked with three teammates to build the prototype in 24 hours at YHack 2024. The prototype combines an OpenAI-assisted intake chat with a request to speak to a doctor. That request generates a short conversation summary and issue title. A doctor dashboard exposes the context and supports real-time patient–doctor messaging through Firebase.",
     "decisions": [
       [
         "Preserve Context at Handoff",
@@ -96,7 +96,7 @@ export const projects = [
         "Firestore listeners update chat state and messages in both views. Next.js and Material UI provide the interface, allowing the team to focus on the intake-to-handoff flow within the time limit."
       ]
     ],
-    "outcome": "The prototype implements intake, summarization, and doctor messaging. Its intended benefit is less repetition during handoff; no measured reduction in consultation time or clinical validation is claimed.",
+    "outcome": "We built a working intake, summarization, and doctor-messaging flow within the 24-hour hackathon. It demonstrates how a patient’s context can carry into a doctor chat; it remains a prototype and has not been clinically tested.",
     "outcomeTitle": "Prototype Outcome"
   },
   {
@@ -112,8 +112,8 @@ export const projects = [
     "summary": "Organize raw sales data into a consistent SQL Server schema.",
     "description": "Led a six-person project covering sales-data modeling, integrity constraints, repeatable load scripts, and stored procedures.",
     "role": "Team lead, six-person project",
-    "problem": "Raw sales records need consistent entities, relationships, and keys before they can support reliable queries. When the same information is repeated across records, updates can become inconsistent; loading data without clear constraints can introduce invalid relationships. The project addressed that structure and loading problem in SQL Server.",
-    "solution": "I led a six-person team working on entity relationship diagrams, schema design, automated loading, sequence-based keys, and stored procedures. The project organized sales data for querying while using database constraints to capture relationships and business rules.",
+    "problem": "Raw sales records need consistent entities, relationships, and keys before they can support reliable queries. When the same information is repeated across records, updates can become inconsistent; loading data without clear constraints can introduce invalid relationships. I led a team to address these data-modeling and loading problems in SQL Server.",
+    "solution": "I led a six-person team working on entity relationship diagrams, schema design, automated loading, sequence-based keys, and stored procedures. We organized sales data for querying and used database constraints to enforce relationships and business rules.",
     "decisions": [
       [
         "Define Entities and Relationships",
@@ -128,7 +128,7 @@ export const projects = [
         "Integrity constraints and stored procedures put relationship checks and business logic in the database, where they can be applied consistently across data operations."
       ]
     ],
-    "outcome": "The deliverables included schema diagrams, load scripts, keys, constraints, and stored procedures. Together, these components address how sales records are structured, loaded, and checked in SQL Server.",
+    "outcome": "We delivered schema diagrams, repeatable load scripts, keys, constraints, and stored procedures to structure, load, and validate sales records in SQL Server.",
     "outcomeTitle": "Project Deliverables",
     "sourceAvailable": false
   },
@@ -145,12 +145,12 @@ export const projects = [
     "summary": "Ask questions with text, images, or recorded speech.",
     "description": "A React chatbot that accepts image uploads and microphone recordings, using Gemini and Google Cloud Speech-to-Text to process the inputs.",
     "role": "AI application development",
-    "problem": "A text-only chat requires users to type a question and describe any visual information themselves. This project explored letting users supply an image or record speech within the same conversation instead of converting everything into typed text first.",
+    "problem": "A text-only chat requires users to type a question and describe any visual information themselves. The chatbot lets users add an image or record speech within the same conversation.",
     "solution": "The React interface supports typed messages, image uploads, and audio recording. Recorded audio is transcribed through Google Cloud Speech-to-Text and then sent through the text conversation flow. Images use a separate upload-and-response path, and the conversation displays the resulting responses.",
     "decisions": [
       [
         "Speech Feeds the Existing Chat Flow",
-        "The audio handler converts a recording into a transcript and passes that text to the same send-message function used for typed input. Audio is transcribed before prompting the model rather than described as direct audio reasoning."
+        "The audio handler converts a recording into a transcript and passes that text to the same send-message function used for typed input. This lets users speak their questions while reusing the existing text-chat flow."
       ],
       [
         "A Separate Image Upload Path",
@@ -161,7 +161,7 @@ export const projects = [
         "React manages message history and input controls while asynchronous request handlers update the conversation. This keeps different input types within one interaction pattern."
       ]
     ],
-    "outcome": "The repository contains the text, image, and recorded-speech flows, along with speech-synthesis code. Running the development project requires configuring the API services and local backend URLs.",
+    "outcome": "I built text, image, and recorded-speech input into one React chat interface and added speech-synthesis code. The app connects Gemini with Google Cloud Speech-to-Text so users can ask questions in the format that suits them.",
     "outcomeTitle": "Implemented Scope"
   },
   {
@@ -177,7 +177,7 @@ export const projects = [
     "summary": "Learn a Snake-playing policy from rewards instead of scripted moves.",
     "description": "A PyTorch Q-learning experiment that trains on recent moves and replayed experience, with score plots and saved best-performing model weights.",
     "role": "Machine learning project",
-    "problem": "The learning question was how an agent could choose moves from game state and rewards without a hand-written route to the food. It needed to represent nearby danger, direction, and food position, explore unfamiliar moves, and learn from unsuccessful games.",
+    "problem": "I wanted to train an agent to choose moves from game state and rewards without scripting a route to the food. It needed to represent nearby danger, direction, and food position, explore unfamiliar moves, and learn from unsuccessful games.",
     "solution": "The agent encodes the game as 11 state values and uses a neural network to estimate the value of three relative actions: straight, right, or left. Training happens after individual moves and from sampled replay memory after each game. The game restarts automatically so learning can continue.",
     "decisions": [
       [
@@ -193,7 +193,7 @@ export const projects = [
         "Random exploration decreases as the game count increases. Per-game and running-average scores are plotted, and model weights are saved when a new high score is reached."
       ]
     ],
-    "outcome": "The result is an inspectable training loop, score history, and saved model checkpoints. The per-game and average-score plots make changes in performance visible across a training run.",
+    "outcome": "The training loop includes score tracking and saved model checkpoints. The per-game and average-score plots make changes in performance visible across a training run.",
     "outcomeTitle": "Experiment Output"
   },
   {
@@ -225,7 +225,7 @@ export const projects = [
         "Repetition goals and audio/haptic cues reduce the need to watch the display. An ExerciseCounter interface separates movement logic from the camera and screen, providing a basis for additional exercise counters."
       ]
     ],
-    "outcome": "Bicep curls are the currently available exercise in the public implementation; other exercises are listed as Coming Soon. Counting depends on camera placement and visible joints. This is repetition tracking, not a validated assessment of exercise form.",
+    "outcome": "Bicep-curl counting is available now, with a counter interface designed to support more exercises. Accurate counting depends on camera placement and visible joints. The app tracks repetitions; it does not assess exercise form.",
     "outcomeTitle": "Current Scope"
   }
 ];

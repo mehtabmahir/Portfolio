@@ -3,6 +3,7 @@
 ## Preferences
 
 - Use direct, factual wording; avoid slogans and corporate phrasing.
+- Describe app behavior directly with neutral wording such as “The app uses…”; use first person only where personal motivation, decisions, or contributions add useful context. Preserve team attribution. Never frame public copy as an outside review of a README or repository. Keep factual limitations natural and put source-audit commentary in maintenance notes.
 - Use Title Case for headings and role labels, including the footer.
 - Use plain-language commit titles summarizing all changes, with details in the body. No fix:/feat: prefixes.
 - Keep the neutral dark theme, circular portrait, small social icons, and compact rounded buttons.

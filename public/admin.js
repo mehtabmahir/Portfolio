@@ -20,5 +20,5 @@ form.addEventListener('submit', async event => {
     status.textContent = 'Your new resume is live. All resume links now open this PDF.';
     status.className = 'success'; form.reset();
   } catch(error) { status.textContent = error.message === 'Failed to fetch' ? 'Could not reach the server. Check your connection, then view the current resume before retrying.' : error.message; status.className = 'error'; }
-  finally { password.value = ''; button.disabled = false; button.textContent = 'Upload & replace resume ↑'; }
+  finally { password.value = ''; button.disabled = false; button.textContent = 'Upload & replace resume'; }
 });

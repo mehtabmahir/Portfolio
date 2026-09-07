@@ -18,6 +18,7 @@
 
 .portrait-frame{border:0;padding:0;background:transparent}
 .project-image{padding:30px 36px}
+.project-image:is(.refresh-visual,.care-visual) img{scale:1.35}
 html{zoom:1.25}
 
 /* Keep the portrait after the heading on mobile and beside the introduction on desktop. */
@@ -189,6 +190,7 @@ h1,h2{font-weight:600}
 
 /* Give the footer divider breathing room below the Connect panel. */
 body:has(#contact) .footer{margin-top:40px}
+.footer{color:#fff;--muted:#fff;--accent:#fff}
 
 /* Reading surfaces for every standalone page. */
 :root{--reading-glass:rgba(16,20,29,.82)}

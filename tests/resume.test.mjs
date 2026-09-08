@@ -4,7 +4,7 @@ import { scryptSync } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { PDFDocument } from 'pdf-lib';
 import { uploadResume, readResume, MAX_BYTES } from '../netlify/lib/resume.mjs';
-const password='a-strong-test-password-only'; const salt='0123456789abcdef0123456789abcdef';
+const password='TestPass42!'; const salt='0123456789abcdef0123456789abcdef';
 const passwordHash=`scrypt:${salt}:${scryptSync(password,salt,64).toString('hex')}`;
 const doc=await PDFDocument.create();doc.addPage();const pdf=await doc.save();
 const request=(body=pdf,extra={})=>new Request('https://example.netlify.app/api/resume-upload',{method:'POST',headers:{origin:'https://example.netlify.app','x-resume-password':password,'content-type':'application/pdf',...extra},body});

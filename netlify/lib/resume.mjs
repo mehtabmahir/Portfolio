@@ -6,7 +6,7 @@ export const MAX_BYTES = 4 * 1024 * 1024;
 const headers = {'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
 export function validHash(hash) { return typeof hash === 'string' && /^scrypt:[a-f0-9]{32}:[a-f0-9]{128}$/.test(hash); }
 export async function verifyPassword(password, hash) {
-  if (!validHash(hash) || typeof password !== 'string' || password.length<16 || password.length>256) return false;
+  if (!validHash(hash) || typeof password !== 'string' || password.length<8 || password.length>256) return false;
   const [,salt,expected]=hash.split(':');
   const actual=await scrypt(password,salt,64);
   return timingSafeEqual(actual,Buffer.from(expected,'hex'));

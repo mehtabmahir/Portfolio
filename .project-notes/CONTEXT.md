@@ -10,10 +10,12 @@
 - No Unicode arrow symbols: iOS can render them as emoji.
 - The portrait links to LinkedIn and appears below the Software Engineer heading on mobile.
 - The label above the name is Malverne, NY, without a status dot.
-- Degree details belong directly under Experience, before the six jobs, without a separate Education heading or card.
+- Degree details belong directly under Experience, before the jobs, without a separate Education heading or card. Keep the wording “Bachelor’s Degree in Computer Science”; do not substitute BA or BS.
 - Degree label: Queens College, NY. Dates: Jan 2023 - Dec 2025.
 - Keep the existing work roles; exclude Uber. Combine Handshake and LinkedIn AI Training Program in one AI Trainer entry with comma-separated names and their shared Aug 2026 – Present dates. Retain both roles’ bullets. Omit the Handshake project name and Contract/Remote from LinkedIn.
 - Use the latest resume details, retaining relevant earlier specifics without duplicate bullets. Preserve the uploaded PDF itself.
+- Resume review, September 2026: use two combined Handshake/LinkedIn bullets; retain present tense for Mercor; describe the internship’s deepfake work as face swapping through a Node.js child process running a Python tool. EasyWhisperUI’s batch processing and live transcription were user-requested. Keep detailed Payment Analyst content and Experience above Projects on the website.
+- The final revised resume has only been shared as screenshots so far. Do not replace the downloadable PDF until the final PDF is supplied. Auto 60 Hz’s existing up-to-20% estimate remains qualified by device/workload; no new benchmark measurements were supplied during the resume review.
 
 ## Resume Hosting
 

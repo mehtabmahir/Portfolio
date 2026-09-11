@@ -12,7 +12,7 @@ export const projects = [
     ],
     "url": "https://github.com/mehtabmahir/easy-whisper-ui",
     "summary": "Run Whisper locally without setting up a command-line workflow.",
-    "description": "A desktop transcription app that handles model downloads, media conversion, and GPU setup, with batch queues and live transcription.",
+    "description": "A desktop transcription app that handles model downloads, media conversion, and GPU setup, with user-requested batch processing and live transcription.",
     "role": "Desktop application development",
     "problem": "People who want to transcribe recordings locally can run Whisper, but getting started involves model files, media conversion, dependencies, and hardware-specific configuration. Repeating those steps for a folder of recordings adds more work. I built EasyWhisperUI so users could transcribe locally without assembling that workflow themselves.",
     "solution": "EasyWhisperUI brings model selection, downloads, FFmpeg preprocessing, and transcription into one desktop app. Users can queue recordings, export text or timestamped subtitles, or use live transcription. Audio processing runs locally through whisper.cpp, with GPU acceleration where supported.",
@@ -26,11 +26,11 @@ export const projects = [
         "The Electron renderer has no direct Node.js access. A narrow preload bridge connects the React interface to main-process operations such as file handling and transcription, keeping those responsibilities separate."
       ],
       [
-        "Batch and Live Workflows",
-        "A sequential queue handles multiple recordings, FFmpeg converts inputs, and model downloads happen when needed. Live transcription provides a separate path for ongoing audio and is currently marked beta."
+        "User-Requested Batch and Live Workflows",
+        "User requests shaped features including queue-based batch processing and live transcription. A sequential queue handles multiple recordings, FFmpeg converts inputs, and model downloads happen when needed. Live transcription handles ongoing audio and is currently marked beta."
       ]
     ],
-    "outcome": "Available for Windows, macOS, and Linux, with text and SRT output and more than 500 GitHub stars. Transcription speed depends on the model and available hardware; Linux compatibility can vary by distribution.",
+    "outcome": "Reached 500+ GitHub stars as an open-source local transcription tool. Available for Windows, macOS, and Linux, with text and SRT output. Transcription speed depends on the model and available hardware; Linux compatibility can vary by distribution.",
     "outcomeTitle": "Result and Compatibility"
   },
   {
@@ -41,11 +41,12 @@ export const projects = [
     "tags": [
       "C++",
       "Qt",
-      "WinAPI"
+      "WinAPI",
+      "PSAPI"
     ],
     "url": "https://github.com/mehtabmahir/auto-60hz-cpp",
     "summary": "Save laptop battery by lowering the refresh rate during full-screen video.",
-    "description": "Switches from 120 Hz to 60 Hz for full-screen playback on battery, then restores the higher rate afterward. Both refresh rates are configurable.",
+    "description": "Lowers the display refresh rate during full-screen use on battery, for example from 120 Hz to 60 Hz, then restores the higher rate afterward. Both rates are configurable.",
     "role": "Windows application development",
     "problem": "Keeping a laptop display at 120 Hz can use more battery power even when the content does not need that refresh rate. A 30 or 60 fps video does not contain 120 unique frames per second, yet the display may remain at 120 Hz throughout playback. I wanted to reduce that unnecessary power use while keeping a higher refresh rate for everyday interaction.",
     "solution": "Auto 60 Hz checks the foreground window and power source. While running on battery, it selects the configured lower refresh rate when the tracked window is full-screen and restores the higher rate after full-screen mode ends. Connecting AC power also restores the higher rate. The Qt interface exposes both values and a run-on-startup option.",
@@ -56,7 +57,7 @@ export const projects = [
       ],
       [
         "Full-Screen Detection as the Trigger",
-        "WinAPI supplies window bounds and PSAPI identifies processes. Known Windows system processes are excluded. Full-screen state is a practical trigger for video watching; the app does not inspect playback frame rate or identify video content."
+        "WinAPI tracks foreground-window bounds, while PSAPI identifies processes so Windows system processes can be excluded. Full-screen state is a practical trigger for video watching; the app does not inspect playback frame rate or identify video content."
       ],
       [
         "Configurable Rates and Periodic Checks",
@@ -221,11 +222,11 @@ export const projects = [
         "The counter combines joint angles, smoothing, confidence checks, and extension/flexion states. Motion history and missing-frame tolerance help handle brief tracking gaps instead of treating every change in angle as a repetition."
       ],
       [
-        "Feedback and an Extendable Counter Interface",
-        "Repetition goals and audio/haptic cues reduce the need to watch the display. An ExerciseCounter interface separates movement logic from the camera and screen, providing a basis for additional exercise counters."
+        "Goals and Feedback",
+        "Repetition goals and audio and haptic cues signal progress without requiring users to watch the display. A live skeletal overlay helps users see whether their pose is being tracked."
       ]
     ],
-    "outcome": "Bicep-curl counting is available now, with a counter interface designed to support more exercises. Accurate counting depends on camera placement and visible joints. The app tracks repetitions; it does not assess exercise form.",
+    "outcome": "Bicep-curl counting is available now. An ExerciseCounter interface separates movement logic from camera capture and the UI, providing a foundation for additional exercise counters. Accurate counting depends on camera placement and visible joints. The app tracks repetitions; it does not assess exercise form.",
     "outcomeTitle": "Current Scope"
   }
 ];

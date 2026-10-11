@@ -8,11 +8,14 @@ export const projects = [
       "Electron",
       "React",
       "TypeScript",
-      "whisper.cpp"
+      "whisper.cpp",
+      "PowerShell",
+      "FFmpeg",
+      "Vulkan / Metal"
     ],
     "url": "https://github.com/mehtabmahir/easy-whisper-ui",
-    "summary": "Run Whisper locally without setting up a command-line workflow.",
-    "description": "A desktop transcription app that handles model downloads, media conversion, and GPU setup, with user-requested batch processing and live transcription.",
+    "summary": "Your audio. Your hardware. Private transcription made simple.",
+    "description": "Turn audio and video into transcripts and subtitles on your own computer. GPU-accelerated on Windows and Apple Silicon Mac, with guided setup and no subscription.",
     "role": "Desktop application development",
     "problem": "People who want to transcribe recordings locally can run Whisper, but getting started involves model files, media conversion, dependencies, and hardware-specific configuration. Repeating those steps for a folder of recordings adds more work. I built EasyWhisperUI so users could transcribe locally without assembling that workflow themselves.",
     "solution": "EasyWhisperUI brings model selection, downloads, FFmpeg preprocessing, and transcription into one desktop app. Users can queue recordings, export text or timestamped subtitles, or use live transcription. Audio processing runs locally through whisper.cpp, with GPU acceleration where supported.",

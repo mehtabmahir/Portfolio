@@ -235,3 +235,5 @@ body:has(.whisper-page)::before{inset:-60px;filter:blur(28px)}
 .whisper-previews .app-cutout img,.featured-visual .app-cutout img{position:absolute;max-width:none;max-height:none;height:auto;display:block;border:0;border-radius:0;box-shadow:none;transform:none!important;object-fit:initial}
 .whisper-previews .app-cutout-macos img,.featured-visual .app-cutout-macos img{width:106.60125%;left:-2.54237%;top:-4.05743%}
 .whisper-previews .app-cutout-windows img{width:107.95724%;left:-4.15677%;top:-5.40316%}
+
+.about-skill-cards{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:18px 0 0;max-width:320px}.about-skill-cards li{padding:6px 11px;border:1px solid var(--glass-border);border-radius:8px;background:var(--glass);color:var(--text);font-size:12px;line-height:1.4}

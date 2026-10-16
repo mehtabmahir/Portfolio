@@ -246,3 +246,13 @@ body:has(.whisper-page)::before{inset:-60px;filter:blur(28px)}
 #resume-pages{width:max-content;min-width:100%;padding:12px;display:flex;flex-direction:column;align-items:center;gap:12px}
 .resume-sheet{flex:none;position:relative;background:white;box-shadow:0 2px 6px #0005;overflow:hidden}
 .resume-sheet canvas{display:block}
+
+/* PDF.js text geometry: invisible selectable text above the rendered page. */
+.resume-text{position:absolute;inset:0;overflow:clip;line-height:1;letter-spacing:normal;word-spacing:normal;text-align:initial;text-size-adjust:none;-webkit-text-size-adjust:none;forced-color-adjust:none;transform-origin:0 0;--min-font-size:1;--text-scale-factor:calc(var(--total-scale-factor) * var(--min-font-size));--min-font-size-inv:calc(1 / var(--min-font-size))}
+.resume-text :is(span,br){color:transparent;position:absolute;white-space:pre;cursor:text;transform-origin:0 0;user-select:text;-webkit-user-select:text}
+.resume-text > :not(.markedContent),.resume-text .markedContent span:not(.markedContent){--font-height:0;--scale-x:1;--rotate:0deg;font-size:calc(var(--text-scale-factor) * var(--font-height));transform:rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv))}
+.resume-text .markedContent{display:contents}
+.resume-text ::selection{background:rgba(40,120,230,.35)}
+.resume-pdf-link{position:absolute;z-index:1;cursor:pointer;border-radius:2px}
+.resume-pdf-link:hover{background:rgba(40,120,230,.15)}
+.resume-pdf-link:focus-visible{outline:2px solid #2878e6;outline-offset:1px;background:rgba(40,120,230,.15)}

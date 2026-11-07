@@ -23,8 +23,6 @@ export function workoutPage(p) {
   const dots = shots.map((shot, i) => `<span class="wc-dot${i ? '' : ' is-active'}" data-wc-dot></span>`).join('');
 
   return `<main id="main" class="wrap wc-page">
- <a class="back-link" href="/#projects">Back to all projects</a>
-
  <header class="wc-hero">
   <p class="eyebrow">iOS · ON-DEVICE VISION</p>
   <h1>Workout Counter iOS</h1>
@@ -48,17 +46,17 @@ export function workoutPage(p) {
  </section>
 
  <section class="wc-row" aria-labelledby="problem-title">
-  <div class="wc-row-label"><p class="eyebrow">01</p><h2 id="problem-title">The problem</h2></div>
+  <div class="wc-row-label"><h2 id="problem-title">The problem</h2></div>
   <div class="wc-row-body"><p>${p.problem}</p></div>
  </section>
 
  <section class="wc-row" aria-labelledby="features-title">
-  <div class="wc-row-label"><p class="eyebrow">02</p><h2 id="features-title">What it does</h2></div>
+  <div class="wc-row-label"><h2 id="features-title">What it does</h2></div>
   <div class="wc-row-body"><ul class="wc-features">${features.map(([title, text]) => `<li><h3>${title}</h3><p>${text}</p></li>`).join('')}</ul></div>
  </section>
 
  <section class="wc-row" aria-labelledby="how-title">
-  <div class="wc-row-label"><p class="eyebrow">03</p><h2 id="how-title">How it counts</h2></div>
+  <div class="wc-row-label"><h2 id="how-title">How it counts</h2></div>
   <div class="wc-row-body">
    <p>${p.solution}</p>
    <ol class="wc-steps">
@@ -68,10 +66,10 @@ export function workoutPage(p) {
  </section>
 
  <section class="wc-row" aria-labelledby="scope-title">
-  <div class="wc-row-label"><p class="eyebrow">04</p><h2 id="scope-title">Current scope</h2></div>
+  <div class="wc-row-label"><h2 id="scope-title">Current scope</h2></div>
   <div class="wc-row-body"><p>${p.outcome}</p></div>
  </section>
 
- <div class="wc-end"><a class="text-link" href="/#projects">Back to all projects</a><a class="text-link" href="${repo}">Browse the repository</a></div>
+ <div class="wc-end"><a class="text-link" href="${repo}">Browse the repository</a></div>
 </main><script src="/workout-gallery.js" defer></script>`;
 }

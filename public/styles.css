@@ -334,8 +334,7 @@ body:has(.wc-page)::before{inset:-60px;filter:blur(28px)}
 .featured-visual.workout-preview img{width:min(290px,100%);height:auto;border-radius:26px;box-shadow:0 22px 50px #0006}
 
 /* Workout Counter case study */
-.wc-page{padding-bottom:24px}
-.wc-page .back-link{display:inline-flex;margin-bottom:20px}
+.wc-page{padding-top:42px;padding-bottom:24px}
 .wc-hero{max-width:880px;padding-bottom:34px}
 .wc-hero h1{font-size:clamp(2.25rem,4.3vw,3.35rem);line-height:1.06;margin:10px 0 0;text-wrap:balance}
 .wc-headline{font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.35;letter-spacing:-.03em;font-weight:500;color:var(--text);margin-top:16px;max-width:640px}
@@ -368,7 +367,7 @@ body:has(.wc-page)::before{inset:-60px;filter:blur(28px)}
 @media(prefers-reduced-motion:reduce){.wc-viewer:hover{transform:none}}
 
 .wc-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(24px,4vw,60px);padding:38px 0;border-top:1px solid var(--glass-border)}
-.wc-row-label h2{font-size:clamp(1.3rem,2.1vw,1.6rem);letter-spacing:-.03em;margin-top:4px;text-wrap:balance}
+.wc-row-label h2{font-size:clamp(1.3rem,2.1vw,1.6rem);letter-spacing:-.03em;margin-top:0;text-wrap:balance}
 .wc-row-body{max-width:690px}
 .wc-row-body>p{font-size:16px;line-height:1.8}
 .wc-features{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;margin:0;padding:0;list-style:none}
@@ -387,6 +386,7 @@ body:has(.wc-page)::before{inset:-60px;filter:blur(28px)}
  .wc-stage{max-width:640px}
 }
 @media(max-width:760px){
+ .wc-page{padding-top:28px}
  .wc-hero h1{font-size:clamp(2rem,8vw,2.6rem)}
  .wc-headline{font-size:1.25rem;margin-top:12px}
  .wc-lead{font-size:16px}
@@ -395,7 +395,6 @@ body:has(.wc-page)::before{inset:-60px;filter:blur(28px)}
  .wc-phone img{width:min(260px,70vw)}
  .wc-caption{font-size:12px}
  .wc-row{grid-template-columns:1fr;gap:10px;padding:28px 0}
- .wc-row-label h2{margin-top:2px}
  .wc-features{grid-template-columns:1fr;gap:16px}
  .wc-end{flex-direction:column;align-items:flex-start}
 }

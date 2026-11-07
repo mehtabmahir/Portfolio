@@ -349,9 +349,8 @@ body:has(.wc-page)::before{inset:-60px;filter:blur(28px)}
 .wc-facts li::before{content:"";position:absolute;left:0;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:.75}
 
 .wc-showcase{margin:4px 0 52px}
-.wc-showcase-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:18px}
+.wc-showcase-head{margin-bottom:18px}
 .wc-showcase-head h2{font-size:clamp(1.5rem,2.4vw,1.95rem);letter-spacing:-.035em;margin-top:6px;text-wrap:balance}
-.wc-showcase-head>p{font-size:14px;max-width:340px;text-align:right;color:var(--muted)}
 .wc-stage{display:flex;flex-direction:column;align-items:center;gap:18px;max-width:720px;margin-inline:auto;padding:clamp(26px,4vw,46px) clamp(20px,3vw,36px) clamp(22px,3vw,30px);border:1px solid var(--glass-border);border-radius:22px;background:var(--glass);box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(22px) saturate(125%);backdrop-filter:blur(22px) saturate(125%)}
 .wc-viewer{display:block;padding:0;margin:0;border:0;background:none;border-radius:44px;cursor:pointer;transition:transform .35s ease}
 .wc-viewer:focus-visible{outline:2px solid var(--accent);outline-offset:8px}
@@ -364,6 +363,7 @@ body:has(.wc-page)::before{inset:-60px;filter:blur(28px)}
 .wc-dots{display:flex;gap:6px;margin-top:2px}
 .wc-dot{width:6px;height:6px;border-radius:50%;background:var(--line);transition:width .25s ease,background .25s ease}
 .wc-dot.is-active{width:18px;border-radius:3px;background:var(--accent)}
+.wc-hint{margin:0;font-size:12px;line-height:1.5;text-align:center;color:var(--muted)}
 @media(hover:hover) and (pointer:fine){.wc-viewer:hover{transform:translateY(-4px)}}
 @media(prefers-reduced-motion:reduce){.wc-viewer:hover{transform:none}}
 
@@ -385,15 +385,12 @@ body:has(.wc-page)::before{inset:-60px;filter:blur(28px)}
 @media(max-width:1000px){
  .wc-hero h1{font-size:clamp(2.05rem,5vw,2.9rem)}
  .wc-stage{max-width:640px}
- .wc-showcase-head>p{max-width:260px}
 }
 @media(max-width:760px){
  .wc-hero h1{font-size:clamp(2rem,8vw,2.6rem)}
  .wc-headline{font-size:1.25rem;margin-top:12px}
  .wc-lead{font-size:16px}
  .wc-showcase{margin-bottom:36px}
- .wc-showcase-head{flex-direction:column;align-items:flex-start;gap:6px}
- .wc-showcase-head>p{text-align:left;max-width:none}
  .wc-stage{padding:26px 16px;border-radius:16px;gap:16px}
  .wc-phone img{width:min(260px,70vw)}
  .wc-caption{font-size:12px}

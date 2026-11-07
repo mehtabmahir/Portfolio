@@ -36,8 +36,9 @@ export function workoutPage(p) {
  </header>
 
  <section class="wc-showcase" aria-labelledby="screens-title">
-  <div class="wc-showcase-head"><div><p class="eyebrow">PRODUCT TOUR</p><h2 id="screens-title">Screens</h2></div><p>Click or tap the screen to cycle through the set.</p></div>
+  <div class="wc-showcase-head"><p class="eyebrow">PRODUCT TOUR</p><h2 id="screens-title">Screens</h2></div>
   <div class="wc-stage">
+   <p class="wc-hint">Click or tap the screen to cycle through the set.</p>
    <button class="wc-viewer" type="button" data-wc-viewer aria-label="Show next screen" aria-describedby="wc-caption" title="Show next screen">
     <span class="wc-phone">${screens}</span>
    </button>

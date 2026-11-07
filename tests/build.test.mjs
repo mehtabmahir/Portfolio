@@ -12,6 +12,38 @@ test('built pages have one h1, metadata, and valid internal links and assets',as
 });
 
 
+test('homepage and EasyWhisperUI case study carry current verified content', async () => {
+ const home = await readFile('dist/index.html','utf8');
+ assert.match(home, /May 2026 – Present/);
+ assert.match(home, /Bachelor’s Degree in Computer Science/);
+ assert.match(home, /Queens College, City University of New York/);
+ assert.match(home, /llama\.cpp/);
+ assert.match(home, /588/);
+ assert.match(home, /EasyWhisperUI/);
+ assert.match(home, /twitter:card/);
+ await access('dist/assets/og.jpg');
+ const whisper = await readFile('dist/projects/easy-whisper-ui/index.html','utf8');
+ assert.match(whisper, /Transcript Reader/);
+ assert.match(whisper, /v3\.2\.1/);
+ assert.match(whisper, /llama\.cpp/);
+ assert.match(whisper, /data-platform="windows"/);
+ assert.match(whisper, /Linux support|Linux beta|Linux works/);
+ assert.doesNotMatch(whisper, /500\+ GitHub stars/);
+ const workout = await readFile('dist/projects/workout-counter/index.html','utf8');
+ assert.match(workout, /Workout Counter iOS/);
+ assert.match(workout, /workout-home\.jpg/);
+ assert.match(workout, /workout-counting\.jpg/);
+ assert.match(workout, /workout-complete\.jpg/);
+ assert.match(workout, /data-wc-viewer/);
+ assert.match(workout, /workout-gallery\.js/);
+ assert.match(workout, /Apple Vision/);
+ assert.match(workout, /130°/);
+ assert.doesNotMatch(workout, /500\+/);
+ const database = await readFile('dist/projects/database-normalization/index.html','utf8');
+ assert.match(database, /CSCI331Group3/);
+ assert.match(database, /3NF/);
+});
+
 test('every local link fragment resolves on its destination page', async () => {
  const files = (await readdir('dist', {recursive:true})).filter(file => file.endsWith('.html'));
  for (const file of files) {
